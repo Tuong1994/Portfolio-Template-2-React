@@ -31,6 +31,7 @@ interface VerticalProps {
   sliderClass?: string;
   menuContainerClass?: string;
   menuClass?: string;
+  menuActiveClass?: string;
 }
 
 const Vertical: React.FC<VerticalProps> = (props) => {
@@ -45,6 +46,7 @@ const Vertical: React.FC<VerticalProps> = (props) => {
     sliderClass,
     menuContainerClass,
     menuClass,
+    menuActiveClass,
   } = props;
 
   const [sliderPos, setSliderPos] = React.useState<number>(0);
@@ -85,7 +87,7 @@ const Vertical: React.FC<VerticalProps> = (props) => {
       return React.Children.map(children, (child, index) => (
         <div
           className={`menu__item ${menuClass ? menuClass : ""} ${
-            sliderPos === index ? "menu__item--active" : ""
+            sliderPos === index ? menuActiveClass || "menu__item--active" : ""
           }`}
           onClick={() => jumpToSlide(index)}
         ></div>

@@ -26,11 +26,19 @@ function App() {
   return (
     <React.Fragment>
       <Components.Header />
-      <Components.Slider.Vertical infinite>
+      <Components.Slider.Vertical
+        infinite
+        prevBtnClass="prev-btn"
+        nextBtnClass="next-btn"
+        prevBtnContent="↑"
+        nextBtnContent="↓"
+        menuClass="menu"
+        menuActiveClass="menu-active"
+      >
         {list.map((l) => (
           <div
             key={l.id}
-            style={{ width: "100%", height: "100%", background: "#333" }}
+            style={{ width: "100%", height: "100%", background: "#111" }}
           >
             {l.component}
           </div>

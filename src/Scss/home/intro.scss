@@ -12,5 +12,67 @@
     padding: 20px;
     border: 1px solid $secondary;
     border-radius: 4px;
+    color: $tWhite;
+    display: flex;
+    align-items: center;
+    .content__detail {
+      width: 70%;
+      .detail__title {
+        strong {
+          color: $tSecondary;
+          font-size: $h1 + 10;
+          @include respond(phone) {
+            font-size: $h6;
+          }
+        }
+        @include respond(phone) {
+          font-size: $default;
+        }
+      }
+      .detail__typing-text {
+        @include respond(phone) {
+          font-size: $h6;
+        }
+      }
+      .detail__paragraph {
+        margin: 15px 0;
+        @include respond(phone) {
+          font-size: $body-2;
+          margin: 0;
+        }
+      }
+      .detail__download {
+        padding: 10px;
+        text-decoration: none;
+        background: $secondary;
+        border-radius: 4px;
+        color: $tWhite;
+        span {
+          margin-right: 10px;
+        }
+      }
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+    .content__image {
+      width: 30%;
+      .image {
+        width: 100%;
+        border-radius: 4px;
+        @include respond(phone) {
+          width: 50%;
+        }
+      }
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+    @include respond(phone) {
+      flex-direction: column-reverse;
+    }
+  }
+  @include respond(phone) {
+    padding: 10px;
   }
 }
